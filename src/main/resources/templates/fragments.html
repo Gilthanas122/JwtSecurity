@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+<div th:fragment="navbar-fragment">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            </button>
+
+            <button sec:authorize="isAuthenticated()==false" class="btn btn-outline-secondary" type="button"><a
+                    th:href="@{/register}">Register</a></button>
+            <button form-method="post" sec:authorize="isAuthenticated() == false" class="btn btn-outline-danger"
+                    type="submit"><a th:text="Login" th:href="@{/login}"></a>
+            </button>
+        </form>
+
+
+    </nav>
+
+</div>
+</body>
+</html>
